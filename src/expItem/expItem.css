@@ -1,0 +1,15 @@
+.expItem {
+    display: flex;
+}
+
+.expItem__bullet-list {
+    width: 100%;
+    padding: 3rem 0;
+    background-color: red;
+}
+
+.expItem__image {
+    width: 100%;
+    padding: 3rem 0;
+    background-color: orange;
+}
