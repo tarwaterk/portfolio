@@ -4,12 +4,13 @@
 
 .expItem__bullet-list {
     width: 100%;
-    padding: 3rem 0;
-    background-color: red;
+    padding: 3rem;
+    flex: 1;
+    background-color: #EEEEEE22;
 }
 
 .expItem__image {
     width: 100%;
-    padding: 3rem 0;
-    background-color: orange;
+    padding: 3rem;
+    flex: 1;
 }
