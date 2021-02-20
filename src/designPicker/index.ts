@@ -1,0 +1,1 @@
+export { DesignWidget } from './designWidget/DesignWidget';

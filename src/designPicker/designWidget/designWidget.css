@@ -1,0 +1,12 @@
+.design-widget {
+    display: inline-block;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #000;
+    background-color: #FFF;
+    border-radius: 2px;
+}
+
+.design-widget__angle-input {
+    margin-bottom: 1rem;
+}

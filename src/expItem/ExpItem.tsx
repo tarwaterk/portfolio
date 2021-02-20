@@ -8,6 +8,7 @@ interface Props {
     startDate: string;
     endDate: string;
     bullets: string[];
+    backgroundImage: string;
 }
 
 export const ExpItem:React.FC<Props> = ({
@@ -16,10 +17,11 @@ export const ExpItem:React.FC<Props> = ({
     title,
     startDate,
     endDate,
-    bullets
+    bullets,
+    backgroundImage
 }) => {
     const imageBackground = {
-        backgroundImage: "linear-gradient(225deg, rgba(47,150,57,.8), rgba(0,255,0,0) 70.71%), linear-gradient(45deg, rgba(47,150,130,.8), rgba(0,255,0,0) 70.71%)"
+        backgroundImage: backgroundImage
     }
     const expItemDirection = {
         flexDirection: reverse ? "row-reverse" as "row-reverse" : "row" as "row"
@@ -32,8 +34,8 @@ export const ExpItem:React.FC<Props> = ({
                 <div>{`${startDate} - ${endDate || 'Present'}`}</div>
                 <ul>
                     {
-                        bullets.map((item) => {
-                            return <li>{item}</li>;
+                        bullets.map((item, index) => {
+                            return <li key={`expItem__bullet-${index}`}>{item}</li>;
                         })
                     }
                 </ul>
