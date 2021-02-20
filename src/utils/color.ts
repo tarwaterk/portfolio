@@ -22,7 +22,15 @@ export const adjustColor = (origColor: string) => {
         break;
    }
 
-   return `#${red.toString(16)}${green.toString(16)}${blue.toString(16)}`;
+   return `#${convertNumToColorHex(red)}${convertNumToColorHex(green)}${convertNumToColorHex(blue)}`;
+};
+
+export const convertNumToColorHex = (num: number) => {
+    let hexString = num.toString(16);
+    if (hexString.length < 2) {
+        hexString = `${hexString}${hexString}`;
+    }
+    return hexString;
 };
 
 export const generateLinearGradient = (baseColor: string, baseAngle: number, multiple: number = 3) => {
