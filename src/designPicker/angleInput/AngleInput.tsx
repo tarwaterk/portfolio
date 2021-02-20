@@ -1,4 +1,5 @@
-import React, { ChangeEvent } from 'react';
+import React from 'react';
+import { Slider } from '@material-ui/core';
 
 interface Props {
     className: string;
@@ -6,16 +7,22 @@ interface Props {
 }
 
 export const AngleInput: React.FC<Props> = ({ className, onAngleUpdate }) => {
-    const onInputChange = (onUpdate: (newAngle: number) => void) => (e: ChangeEvent<HTMLInputElement>) => {
-        if (e.target) {
-            onUpdate(parseInt(e.target.value) % 360);
+    const onInputChange = (onUpdate: (newAngle: number) => void) => (e: any, value: number | number[]) => {
+        if (typeof value === 'number') {
+            onUpdate(value % 360);
         }
     };
 
     return (
         <div className={className}>
-            <div>Select Angle (in degrees):</div>
-            <input type={'number'} onChange={onInputChange(onAngleUpdate)}/>
+            <div>Select Angle:</div>
+            <Slider
+                defaultValue={15}
+                min={0}
+                max={360}
+                step={1}
+                onChange={onInputChange(onAngleUpdate)}
+            />
         </div>
     );
 };
