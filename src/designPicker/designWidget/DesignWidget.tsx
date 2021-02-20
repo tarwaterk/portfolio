@@ -11,8 +11,8 @@ interface Props {
 export const DesignWidget: React.FC<Props> = ({ onAngleUpdate, onColorUpdate }) => {
     return (
         <div className={'design-widget'}>
-            <AngleInput onAngleUpdate={onAngleUpdate} />
-            <ColorInput onColorUpdate={onColorUpdate} />
+            <AngleInput className={'design-widget__angle-input'} onAngleUpdate={onAngleUpdate} />
+            <ColorInput className={'design-widget__color-input'} onColorUpdate={onColorUpdate} />
         </div>
     );
 };
