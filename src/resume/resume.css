@@ -1,4 +1,16 @@
+.resume__top-section {
+    display: flex;
+    margin: 1rem 0;
+}
+
 .resume__intro-summary {
-    padding: 6rem 0;
-    text-align: center;
+    flex: 2;
+    padding: 3rem 1rem;
+    text-align: left;
+    border-right: 1px solid #CCC;
+}
+
+.resume__tech {
+    flex: 1;
+    font-size: .85rem;
 }
