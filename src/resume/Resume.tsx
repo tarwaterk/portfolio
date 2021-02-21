@@ -15,6 +15,7 @@ export const Resume:React.FC<Props> = ({ baseAngle, baseColor }) => {
         <>
             <div className={'resume__top-section'}>
                 <div className={'resume__intro-summary'}>{EXP_SUMMARY}</div>
+                
                 <div className={'resume__tech'}>
                     <ul>
                         {
