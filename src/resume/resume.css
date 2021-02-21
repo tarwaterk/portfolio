@@ -14,3 +14,24 @@
     flex: 1;
     font-size: .85rem;
 }
+
+.resume__experience-list {
+    margin: auto;
+}
+
+@media (max-width: 768px) {
+    .resume__top-section {
+        flex-direction: column;
+        margin: 0 1rem;
+    }
+
+    .resume__intro-summary {
+        border-right: none;
+        border-bottom: 1px solid #CCC;
+        padding: 2rem 1rem;
+    }
+
+    .resume__tech {
+        padding: 1rem 0;
+    }
+}

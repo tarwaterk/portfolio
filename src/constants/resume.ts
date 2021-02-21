@@ -23,8 +23,8 @@ export const EXP_ITEMS = [
         startDate: '2018/07',
         endDate: '',
         bullets: [
-            'Brought codebase from ~20% test coverage to target of >90%.',
-            'Converted javascript codebase to typescript to prevent errors caused by loose typing.',
+            'Brought codebase from ~20% test coverage to target of >90% using Enzyme and Jest.',
+            'Converted javascript codebase to typescript to prevent errors caused by loose typing control.',
             'Designed API and refactored UI code to facilitate performance by adhering to REST principles and utilizing a service layer for the React application allowing for clearer responsibility delegation and form auto-save functionality.',
             'Work with stakeholders and UX to groom user stories down to technical stories with levels of effort that could fit inside of a development sprint.',
             'Create reusable React components and handle asynchronous logic with redux-saga to implement user stories.'

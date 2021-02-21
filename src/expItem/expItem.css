@@ -3,7 +3,6 @@
 }
 
 .expItem__bullet-list-container {
-    width: 100%;
     padding: 2rem;
     flex: 2;
     background-color: #EEEEEE22;
@@ -29,7 +28,16 @@
 }
 
 .expItem__image {
-    width: 100%;
     padding: 2rem;
     flex: 1;
+}
+
+@media (max-width: 768px) {
+    .expItem {
+        flex-direction: column-reverse !important;
+    }
+
+    .expItem__bullet-list-container {
+        background-color: #FFF;
+    }
 }
