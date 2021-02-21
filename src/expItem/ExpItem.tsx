@@ -26,13 +26,14 @@ export const ExpItem:React.FC<Props> = ({
     const expItemDirection = {
         flexDirection: reverse ? "row-reverse" as "row-reverse" : "row" as "row"
     };
+    const bulletContainerClassName = reverse ? 'expItem__bullet-list-container expItem__bullet-list-container--white-background' : 'expItem__bullet-list-container';
     return (
         <div className={'expItem'} style={expItemDirection}>
-            <div className={'expItem__bullet-list'}>
-                <div>{employer}</div>
-                <div>{title}</div>
-                <div>{`${startDate} - ${endDate || 'Present'}`}</div>
-                <ul>
+            <div className={bulletContainerClassName}>
+                <div className={'expItem__bullet-list-employer'}>{employer}</div>
+                <div className={'expItem__bullet-list-title'}>{title}</div>
+                <div className={'expItem__bullet-list-time'}>{`${startDate} - ${endDate || 'Present'}`}</div>
+                <ul className={'expItem__bullet-list'}>
                     {
                         bullets.map((item, index) => {
                             return <li key={`expItem__bullet-${index}`}>{item}</li>;

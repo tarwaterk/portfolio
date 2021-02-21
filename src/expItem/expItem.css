@@ -2,15 +2,42 @@
     display: flex;
 }
 
-.expItem__bullet-list {
-    width: 100%;
-    padding: 3rem;
-    flex: 1;
+.expItem__bullet-list-container {
+    padding: 2rem;
+    flex: 2;
     background-color: #EEEEEE22;
 }
 
+.expItem__bullet-list-container--white-background {
+    background-color: #FFF;
+}
+
+.expItem__bullet-list-employer {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.expItem__bullet-list-title {
+    font-size: .95rem;
+}
+
+.expItem__bullet-list-time {
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: .5px;
+}
+
 .expItem__image {
-    width: 100%;
-    padding: 3rem;
+    padding: 2rem;
     flex: 1;
+}
+
+@media (max-width: 768px) {
+    .expItem {
+        flex-direction: column-reverse !important;
+    }
+
+    .expItem__bullet-list-container {
+        background-color: #FFF;
+    }
 }
