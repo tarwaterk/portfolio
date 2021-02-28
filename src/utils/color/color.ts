@@ -1,9 +1,8 @@
-export const adjustColor = (origColor: string) => {
+export const adjustColor = (origColor: string, step: number = 100) => {
     /*
     takes in a hex string starting with '#', breaks the main part of the color into R, G, and B sections,
     determines which section is smallest, add ~100 to that value, then return the new hex color value
     */
-   const COLOR_INCR = 100;
    const MOD_BASE = 256;
    let red = parseInt(origColor.slice(1, 3), 16);
    let green = parseInt(origColor.slice(3, 5), 16);
@@ -12,13 +11,13 @@ export const adjustColor = (origColor: string) => {
    
    switch (smallestValue) {
     case red:
-        red = (red + COLOR_INCR) % MOD_BASE;
+        red = (red + step) % MOD_BASE;
         break;
     case green:
-        green = (green + COLOR_INCR) % MOD_BASE;
+        green = (green + step) % MOD_BASE;
         break;
     case blue:
-        blue = (blue + COLOR_INCR) % MOD_BASE;
+        blue = (blue + step) % MOD_BASE;
         break;
     default:
         break;
