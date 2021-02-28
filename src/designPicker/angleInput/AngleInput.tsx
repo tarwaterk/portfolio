@@ -1,14 +1,15 @@
 import React from 'react';
 import { Slider } from '@material-ui/core';
+import { DesignWidgetContext } from '../designWidgetContext/DesignWidgetContext';
 
 interface Props {
     className: string;
-    onAngleUpdate: (newAngle: number) => void;
 }
 
-export const AngleInput: React.FC<Props> = ({ className, onAngleUpdate }) => {
-    const onInputChange = (onUpdate: (newAngle: number) => void) => (e: any, value: number | number[]) => {
-        if (typeof value === 'number') {
+export const AngleInput: React.FC<Props> = ({ className }) => {
+    const { setBaseAngle } = React.useContext(DesignWidgetContext);
+    const onInputChange = (onUpdate?: (newAngle: number) => void) => (e: any, value: number | number[]) => {
+        if (typeof value === 'number' && onUpdate) {
             onUpdate(value % 360);
         }
     };
@@ -21,7 +22,7 @@ export const AngleInput: React.FC<Props> = ({ className, onAngleUpdate }) => {
                 min={0}
                 max={360}
                 step={1}
-                onChange={onInputChange(onAngleUpdate)}
+                onChange={onInputChange(setBaseAngle)}
             />
         </div>
     );
