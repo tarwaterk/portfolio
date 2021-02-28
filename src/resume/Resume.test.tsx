@@ -2,11 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { Resume } from './Resume';
 
 test('renders summary', () => {
-    const mockProps = {
-        baseAngle: 0,
-        baseColor: '#FFFFFF'
-    };
-    render(<Resume {...mockProps} />);
+    render(<Resume />);
     const summaryElement = screen.getByText(/5 years experience/i);
     const techListElement = screen.getByText(/Javascript \/ Typescript/i);
     expect(summaryElement).toBeInTheDocument();
@@ -14,11 +10,7 @@ test('renders summary', () => {
 });
 
 test('renders experience items', () => {
-    const mockProps = {
-        baseAngle: 0,
-        baseColor: '#FFFFFF'
-    };
-    render(<Resume {...mockProps} />);
+    render(<Resume />);
     const goldmanItemElement = screen.getByText(/Goldman Sachs/i);
     expect(goldmanItemElement).toBeInTheDocument();
 });

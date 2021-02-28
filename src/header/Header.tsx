@@ -6,17 +6,15 @@ import { generateLinearGradient } from '../utils/color/color';
 interface Props {
     baseAngle: number;
     baseColor: string;
-    setBaseAngle: Dispatch<SetStateAction<number>>;
-    setBaseColor: Dispatch<SetStateAction<string>>;
 }
 
-export const Header:React.FC<Props> = ({ baseAngle, baseColor, setBaseAngle, setBaseColor }) => {
+export const Header:React.FC<Props> = ({ baseAngle, baseColor }) => {
     const imageBackground = generateLinearGradient(baseColor, baseAngle);
 
     return (
         <div className={'header'} style={{backgroundImage: imageBackground}}>
             <div>Kevin Tarwater</div>
-            <DesignWidget onAngleUpdate={setBaseAngle} onColorUpdate={setBaseColor} />
+            <DesignWidget />
         </div>
     );
 };
