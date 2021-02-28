@@ -3,7 +3,7 @@ import { Slider } from '@material-ui/core';
 
 interface Props {
     className: string;
-    onAngleUpdate: (newAngle: number) => void;
+    onAngleUpdate?: (newAngle: number) => void;
 }
 
 export const AngleInput: React.FC<Props> = ({ className, onAngleUpdate }) => {
@@ -14,6 +14,7 @@ export const AngleInput: React.FC<Props> = ({ className, onAngleUpdate }) => {
     };
 
     return (
+        onAngleUpdate ?
         <div className={className}>
             <div>Select Angle:</div>
             <Slider
@@ -24,5 +25,7 @@ export const AngleInput: React.FC<Props> = ({ className, onAngleUpdate }) => {
                 onChange={onInputChange(onAngleUpdate)}
             />
         </div>
+        :
+        null
     );
 };

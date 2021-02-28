@@ -3,14 +3,9 @@ import { ExpItem } from '../expItem/ExpItem';
 import './resume.css';
 import { EXP_SUMMARY, EXP_TECH, EXP_ITEMS } from '../constants/resume';
 import { generateLinearGradient } from '../utils/color/color';
+import { DesignWidgetContext } from '../designPicker/designWidgetContext/DesignWidgetContext';
 
-interface Props {
-    baseAngle: number;
-    baseColor: string;
-}
-
-export const Resume:React.FC<Props> = ({ baseAngle, baseColor }) => {
-    const backgroundImage = generateLinearGradient(baseColor, baseAngle, 2);
+export const Resume:React.FC = () => {
     return (
         <>
             <div className={'resume__top-section'}>
@@ -28,24 +23,33 @@ export const Resume:React.FC<Props> = ({ baseAngle, baseColor }) => {
                     </ul>
                 </div>
             </div>
-            <div className={'resume__experience-list'}>
+            <DesignWidgetContext.Consumer>
                 {
-                    EXP_ITEMS.map((item, index) => {
+                    dwContextValue => {
+                        const backgroundImage = generateLinearGradient(dwContextValue.baseColor, dwContextValue.baseAngle, 2);
                         return (
-                            <ExpItem
-                                key={`expItem-${index}`}
-                                reverse={item.reverse}
-                                employer={item.employer}
-                                title={item.title}
-                                startDate={item.startDate}
-                                endDate={item.endDate}
-                                bullets={item.bullets}
-                                backgroundImage={backgroundImage}
-                            />
+                            <div className={'resume__experience-list'}>
+                                {
+                                    EXP_ITEMS.map((item, index) => {
+                                        return (
+                                            <ExpItem
+                                                key={`expItem-${index}`}
+                                                reverse={item.reverse}
+                                                employer={item.employer}
+                                                title={item.title}
+                                                startDate={item.startDate}
+                                                endDate={item.endDate}
+                                                bullets={item.bullets}
+                                                backgroundImage={backgroundImage}
+                                            />
+                                        );
+                                    })
+                                }
+                            </div>
                         );
-                    })
+                    }
                 }
-            </div>
+            </DesignWidgetContext.Consumer>
         </>
     );
 };
