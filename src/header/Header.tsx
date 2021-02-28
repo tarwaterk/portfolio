@@ -1,7 +1,7 @@
 import React, { Dispatch, SetStateAction } from 'react';
 import './header.css';
 import { DesignWidget } from '../designPicker/index';
-import { generateLinearGradient } from '../utils/color';
+import { generateLinearGradient } from '../utils/color/color';
 
 interface Props {
     baseAngle: number;
