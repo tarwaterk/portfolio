@@ -2,7 +2,7 @@ import React from 'react';
 import { ExpItem } from '../expItem/ExpItem';
 import './resume.css';
 import { EXP_SUMMARY, EXP_TECH, EXP_ITEMS } from '../constants/resume';
-import { generateLinearGradient } from '../utils/color';
+import { generateLinearGradient } from '../utils/color/color';
 
 interface Props {
     baseAngle: number;

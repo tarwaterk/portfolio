@@ -13,6 +13,5 @@ const App:React.FC<{}> = () => {
 export default App;
 
 /*
-- implement testing
 - use context to pass color-adjuster props
 */
