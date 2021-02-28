@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface DesignWidgetContextValue {
+export interface DesignWidgetContextValue {
     baseAngle: number;
     baseColor: string;
     setBaseAngle?: (num: number) => void;
